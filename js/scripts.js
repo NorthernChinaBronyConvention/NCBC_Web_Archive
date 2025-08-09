@@ -15,50 +15,6 @@ console.log(
     "网站已在GitHub开源：https://github.com/NorthernChinaBronyConvention/NCBC_Web"
 );
 
-function initSite() {
-    setInterval(function() {
-        if(Math.random() > 0.9) {
-            document.body.style.opacity = 0.8 + Math.random() * 0.4;
-            setTimeout(function() {
-                document.body.style.opacity = 1;
-            }, 50 + Math.random() * 300);
-        }
-    }, 5000);
-    
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('nav a');
-    
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        if ((currentPage === 'index.html' && linkPage === '#home') || 
-            (currentPage === 'about.html' && linkPage === '#about')) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
-
-    const hamburger = document.querySelector('.hamburger');
-    const hamburgerNavLinks = document.querySelector('.nav-links');
-    
-    if (hamburger && hamburgerNavLinks) {
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
-            hamburgerNavLinks.classList.toggle('active');
-        });
-    }
-
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-            const faqItem = this.parentElement;
-            faqItem.classList.toggle('active');
-        });
-    });
-
-    initMap();
-}
-
 function initLoader() {
     const loader = document.getElementById('loader');
     const loaderContent = document.getElementById('loader-content');
@@ -178,7 +134,4 @@ function showQuickLoader(container, callback) {
 
 document.addEventListener('DOMContentLoaded', function() {
     initLoader();
-    initSite();
-    initCountdown();
-    initProgress();
 });
