@@ -23,6 +23,11 @@ a {
     color: #00ff00;
 }
 
+a:hover{
+    background-color: #00ff00;
+    color: #000;
+}
+
 img {
     image-rendering: pixelated;
 }
