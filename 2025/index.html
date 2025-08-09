@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/csshake.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/cur.css">
-    <link rel="stylesheet" href="css/APlayer.min.css">
 </head>
 <body>
 
@@ -320,41 +319,5 @@
     
     <script src="js/scripts.js"></script>
     <script src="js/cur.js"></script>
-    <script src="js/APlayer.min.js"></script>
-	<script type="text/javascript">
-		var cursor = new Cursor(".mainbody","waitcursor");
-        var cursor = new Cursor(".retro-button","incursor");
-        var cursor = new Cursor(".faq-question","incursor");
-        var cursor = new Cursor("a","incursor");
-	</script>
-    <script>     
-      document.addEventListener('DOMContentLoaded', function() {
-        const ap = new APlayer({
-          container: document.getElementById('aplayer'),
-          theme: "#00740a",
-          showlrc: true,
-          lrcType: 3,
-          audio: []
-        });
-
-        fetch('https://api.eqad.fun/ncm/playlist/13980548342')
-        .then(response => {
-          return response.json();
-        })
-        .then(songs => {
-          ap.list.clear();
-       
-          songs.forEach(song => {
-            ap.list.add({
-              name: song.title,
-              artist: song.author,
-              url: song.url,
-              cover: song.pic,
-              lrc: song.lrc
-            });
-          });
-        })
-      });
-    </script>
 </body>
 </html>
