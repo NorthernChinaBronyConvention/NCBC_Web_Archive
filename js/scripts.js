@@ -21,7 +21,7 @@ function initLoader() {
     
     if (!loader) return;
     
-    const hasLoaded = sessionStorage.getItem('siteLoaded');
+    const hasLoaded = sessionStorage.getItem('archiveSiteLoaded');
     const hasSpecialLoader = document.querySelector('meta[name="ncbc-loader"][content="special"]');
     const quickLoaderContent = document.getElementById('quick-loader-content');
     const fullLoaderContent = document.getElementById('full-loader-content');
@@ -38,7 +38,7 @@ function initLoader() {
             setTimeout(() => {
                 loader.style.display = 'none';
                 document.body.style.display = 'block';
-                sessionStorage.setItem('siteLoaded', 'true');
+                sessionStorage.setItem('archiveSiteLoaded', 'true');
             }, 1000);
         });
     } else {
